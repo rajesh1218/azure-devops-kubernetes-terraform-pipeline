@@ -8,6 +8,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+
 - task: TerraformCLI@0
   inputs:
     command: 'init'
@@ -22,3 +23,8 @@ steps:
     backendAzureRmContainerName: 'rajeshjallustorecotainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
     allowTelemetryCollection: true
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'azure_rsa.pub'
+
+    
